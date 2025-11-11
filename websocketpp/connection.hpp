@@ -615,6 +615,16 @@ public:
     // Uncategorized public methods //
     //////////////////////////////////
 
+    /// Get the number of buffered messages in the send queue
+    /**
+     * Retrieves the number of messages currently in the outgoing send queue.
+     *
+     * This method invokes the m_write_lock mutex
+     *
+     * @return The current number of messages in the outgoing send queue.
+     */
+    size_t get_send_queue_size() const;
+
     /// Get the size of the outgoing write buffer (in payload bytes)
     /**
      * Retrieves the number of bytes in the outgoing write buffer that have not

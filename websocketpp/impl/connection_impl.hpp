@@ -68,6 +68,12 @@ std::string const & connection<config>::get_origin() const {
 }
 
 template <typename config>
+size_t connection<config>::get_send_queue_size() const {
+    //scoped_lock_type lock(m_connection_state_lock);
+    return m_send_queue.size();
+}
+
+template <typename config>
 size_t connection<config>::get_buffered_amount() const {
     //scoped_lock_type lock(m_connection_state_lock);
     return m_send_buffer_size;
